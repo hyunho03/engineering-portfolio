@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="이현호(hyunho03)의 개발 포트폴리오. 동넷 팀 프로젝트의 백엔드 API, AWS 인프라, 도메인 연결 경험을 소개합니다.">
+  <meta name="theme-color" content="#ddd6c6">
+  <title>이현호 · 개발 포트폴리오</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="topbar">
+    <a class="identity" href="#main">hyunho03</a>
+    <nav aria-label="주요 메뉴"><a href="#work">프로젝트</a><a href="#role">내 역할</a><a href="https://github.com/hyunho03">GitHub ↗</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">이현호의<br>개발 기록</h1>
+      <div class="hero-bottom">
+        <p>백엔드 API부터 AWS 배포, 도메인 연결까지.<br>이현호의 프로젝트와 구현 경험을 담은 포트폴리오입니다.</p>
+        <a class="button" href="#work">동넷 프로젝트 보기 <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section id="work" class="project section" aria-labelledby="project-title">
+      <div class="project-heading"><h2 id="project-title">동넷</h2><p>부산의 이동 조건을<br>함께 보는 길찾기.</p></div>
+      <div class="project-intro">
+        <div><h3>같은 목적지, 다른 조건</h3><p>경사가 가파른 길, 계단이 있는 환승 구간, 그늘이 없는 보도. 최단 시간만으로는 누구에게나 편한 길을 고르기 어렵습니다.</p></div>
+        <div><p>동넷은 사용자의 프로필과 이동 조건을 바탕으로 부산의 보행·대중교통 경로를 비교하는 PWA입니다. 경사·계단·환승·그늘 정보를 지도와 경로 카드에서 함께 확인하도록 만든 <strong>팀 프로젝트</strong>입니다.</p><a class="text-link" href="https://github.com/hyunho03/KT-10">프로젝트 소스 보기 ↗</a></div>
+      </div>
+
+      <div class="gallery-heading"><h3>화면으로 보는 동넷</h3><div class="gallery-controls" hidden><button type="button" id="gallery-prev" aria-label="이전 화면">←</button><button type="button" id="gallery-next" aria-label="다음 화면">→</button></div></div>
+      <div class="gallery" id="gallery" tabindex="0" aria-label="동넷 실제 화면 갤러리, 좌우 스크롤 가능">
+        <figure><img src="./assets/place-search.webp" width="1170" height="2532" alt="출발지와 목적지를 입력하는 동넷 장소 검색 화면" loading="lazy"><figcaption>장소를 찾고</figcaption></figure>
+        <figure><img src="./assets/profile-options.webp" width="1170" height="2532" alt="사용자 프로필과 계단 회피 등 이동 조건을 선택하는 동넷 화면" loading="lazy"><figcaption>내 조건을 정하고</figcaption></figure>
+        <figure><img src="./assets/hero-app.webp" width="1170" height="2532" alt="부산서면우체국에서 부산역으로 가는 경로와 적합도 카드를 비교하는 동넷 화면" loading="lazy"><figcaption>경로를 비교하고</figcaption></figure>
+        <figure><img src="./assets/route-detail.webp" width="1170" height="2532" alt="추천 경로의 구간별 세부 정보를 펼쳐 보는 동넷 화면" loading="lazy"><figcaption>이동 정보를 확인합니다</figcaption></figure>
+      </div>
+      <p class="caption">화면 출처: <a href="https://github.com/hyunho03/KT-10/tree/main/docs/app">동넷 팀의 공개 프로젝트 자료</a>. 화면 속 수치는 촬영 당시의 예시이며 실시간 결과가 아닙니다.</p>
+    </section>
+
+    <section id="role" class="role section" aria-labelledby="role-title">
+      <div class="role-intro"><h2 id="role-title">화면 뒤의 연결</h2><p>제가 맡은 범위는<br><strong>백엔드 API · AWS 인프라 · 도메인 연결</strong>입니다.</p></div>
+      <div class="contributions">
+        <article><h3>백엔드 API</h3><div><p>클라이언트와 서버 기능을 연결하는 백엔드 API를 담당했습니다. 프로젝트의 백엔드는 FastAPI를 사용하며, 경로 추천과 장소 검색, 사용자 기능을 API로 제공합니다.</p><a href="https://github.com/hyunho03/KT-10/tree/main/backend">백엔드 코드 ↗</a></div></article>
+        <article><h3>AWS 인프라</h3><div><p>AWS 환경의 서비스 배포 인프라를 담당했습니다. 저장소에는 Docker 이미지를 ECR에 올리고, AI·백엔드·프런트엔드 ECS 서비스를 갱신하는 GitHub Actions 구성이 담겨 있습니다.</p><a href="https://github.com/hyunho03/KT-10/blob/main/.github/workflows/deploy-ecs.yml">배포 워크플로 ↗</a></div></article>
+        <article><h3>도메인 연결</h3><div><p>서비스 주소인 dongnet.kr의 도메인 연결을 담당했습니다. 배포된 서비스에 도메인을 연결하는 과정까지 경험했습니다. 현재는 서버와 DNS 연결을 내려 둔 상태입니다.</p><a href="https://github.com/hyunho03/KT-10/blob/main/docs/DEPLOYMENT.md">배포 문서 ↗</a></div></article>
+      </div>
+      <p class="caption">개인 담당 영역을 중심으로 정리했습니다. 경로 추천 모델·데이터 분석·프런트엔드 등 전체 기능은 팀이 함께 만든 결과입니다.</p>
+    </section>
+
+    <section class="architecture section" aria-labelledby="architecture-title">
+      <div class="architecture-heading"><h2 id="architecture-title">서비스가 이어지는 방식</h2><p>동넷의 공개 코드와 배포 설정을 바탕으로<br>요청부터 배포 주소까지의 구조를 정리했습니다.</p></div>
+      <div class="architecture-tabs" role="group" aria-label="구조별 설명 선택" hidden>
+        <button type="button" aria-pressed="true" data-panel="api">API</button><button type="button" aria-pressed="false" data-panel="aws">AWS</button><button type="button" aria-pressed="false" data-panel="domain">도메인</button>
+      </div>
+      <div class="architecture-panels" aria-live="polite">
+        <article id="panel-api"><div class="flow" aria-label="화면, FastAPI, 데이터와 외부 서비스 순서"><span>React 화면</span><span aria-hidden="true">↓</span><span>FastAPI</span><span aria-hidden="true">↓</span><span>PostgreSQL · 외부 API</span></div><div><h3>요청을 기능으로 연결</h3><p>화면의 요청을 API가 받고 필요한 데이터와 외부 서비스를 연결합니다. 사용자 정보는 PostgreSQL에 저장하고, SQLAlchemy와 Alembic으로 데이터 접근과 스키마 변경을 관리하는 구조입니다.</p><a class="text-link" href="https://github.com/hyunho03/KT-10/blob/main/docs/BACKEND.md">백엔드 구조 읽기 ↗</a></div></article>
+        <article id="panel-aws"><div class="flow" aria-label="GitHub Actions, ECR, ECS 순서"><span>GitHub Actions</span><span aria-hidden="true">↓</span><span>Amazon ECR</span><span aria-hidden="true">↓</span><span>Amazon ECS</span></div><div><h3>코드를 배포로 연결</h3><p>워크플로가 컨테이너 이미지를 빌드해 ECR에 올리고 ECS 서비스를 갱신합니다. 서비스 안정화 대기와 HTTP 상태·준비 상태 검사가 배포 설정에 포함되어 있습니다.</p><a class="text-link" href="https://github.com/hyunho03/KT-10/blob/main/.github/workflows/deploy-ecs.yml">배포 설정 읽기 ↗</a></div></article>
+        <article id="panel-domain"><div class="flow" aria-label="도메인, HTTPS ALB, 서비스 순서"><span>dongnet.kr</span><span aria-hidden="true">↓</span><span>HTTPS · ALB</span><span aria-hidden="true">↓</span><span>서비스</span></div><div><h3>주소를 서비스로 연결</h3><p>공개 문서는 ALB가 도메인의 HTTPS 요청을 서비스로 전달하는 구조를 설명합니다. 도메인 연결을 담당했으며, 현재 서버와 DNS 연결은 중단되어 있습니다.</p><a class="text-link" href="https://github.com/hyunho03/KT-10/blob/main/docs/DEPLOYMENT.md">운영 구성 읽기 ↗</a></div></article>
+      </div>
+      <p class="caption">구조 설명용 도식입니다. 실제 API 호출이나 현재 서버 상태를 보여 주는 화면은 아닙니다.</p>
+    </section>
+
+    <section class="result section" aria-labelledby="result-title">
+      <h2 id="result-title">남아 있는 결과</h2>
+      <div class="result-columns"><div><p class="statement">경로를 비교하는 화면부터<br>서버와 배포 설정까지.</p><p>결과물은 공개 저장소의 소스 코드, 실제 화면 자료, 구현·배포 문서로 확인할 수 있습니다. 현재 서비스 서버와 DNS는 운영하지 않습니다.</p></div><div><h3>프로젝트의 기술</h3><dl class="stack"><div><dt>서버 · 데이터</dt><dd>FastAPI · PostgreSQL<br>SQLAlchemy · Alembic</dd></div><div><dt>인프라 · 배포</dt><dd>Docker · AWS ECR/ECS/ALB<br>GitHub Actions</dd></div><div><dt>팀의 다른 영역</dt><dd>React · TypeScript<br>XGBoost · GeoPandas · Shapely</dd></div></dl></div></div>
+      <div class="result-links"><a class="button" href="https://github.com/hyunho03/KT-10">전체 소스 코드 ↗</a><a class="text-link" href="#gallery">화면 데모 다시 보기 ↑</a><a class="text-link" href="https://dongnet.kr">기존 서비스 주소 ↗</a></div>
+      <p class="caption">기존 서비스 주소는 운영 중단 상태입니다. AI 점수는 후보 간 상대 적합도이며, 실제 통행의 안전도나 성공확률을 뜻하지 않습니다.</p>
+    </section>
+
+    <section id="about" class="about section" aria-labelledby="about-title">
+      <h2 id="about-title">지금의 관심</h2>
+      <div class="about-columns"><p>안녕하세요. <strong>이현호</strong>, GitHub에서는 <strong>hyunho03</strong>이라는 이름으로 작업합니다. 백엔드 API 설계와 클라우드 배포, 서비스 운영에 관심을 두고 있습니다.</p><p>동넷에서는 화면의 요청을 처리하는 API와 AWS 인프라, 도메인 연결을 맡았습니다. 코드 작성에서 끝나지 않고, 사용자가 접근할 수 있는 서비스로 연결하는 과정에 집중합니다.</p></div>
+      <a class="button" href="./assets/resume.pdf" download="이현호-이력서.pdf">이력서 PDF 다운로드 ↓</a>
+    </section>
+    <footer class="footer">
+      <h2>계속되는 기록</h2><a href="https://github.com/hyunho03" class="footer-github">github.com/hyunho03 ↗</a>
+      <div class="footer-bottom"><span>이현호 · hyunho03</span><a href="https://github.com/hyunho03/KT-10">동넷 팀 프로젝트</a><a href="#main">맨 위로 ↑</a></div>
+    </footer>
+  </main>
+</body>
+</html>
